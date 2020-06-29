@@ -3,10 +3,10 @@ import cx from "classnames";
 import { connect } from "react-redux";
 import { toggleTodo } from "../redux/actions";
 
-const Todo = ({ todo }) => (
+const Todo = ({ todo, toggleTodo }) => (
   <li
     className="todo-item"
-    onClick={() => toggleTodo /** dispatches action to toggle todo */}
+    onClick={() => toggleTodo(todo.id) /** dispatches action to toggle todo */}
   >
     {todo && todo.completed ? "👌" : "👋"}{" "}
     <span

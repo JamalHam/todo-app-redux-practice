@@ -4,7 +4,7 @@ import { VISIBILITY_FILTERS } from "../constants";
 import { connect } from "react-redux";
 import { setFilter } from "../redux/actions";
 
-const VisibilityFilters = ({ activeFilter }) => {
+const VisibilityFilters = ({ activeFilter, setFilter }) => {
   return (
     <div className="visibility-filters">
       {Object.keys(VISIBILITY_FILTERS).map((filterKey) => {
@@ -16,7 +16,7 @@ const VisibilityFilters = ({ activeFilter }) => {
               "filter",
               currentFilter === activeFilter && "filter--active"
             )}
-            onClick={() => { } /** waiting for setFilter handler*/}
+            onClick={() => { setFilter(currentFilter) } /** waiting for setFilter handler*/}
           >
             {currentFilter}
           </span>
